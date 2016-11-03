@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Build-Jdk: 1.7.0_79
 Built-By: usr1
+=======
+Built-By: msvin
+Build-Jdk: 1.8.0_112
+>>>>>>> 10f27941b139f3469b460b5ced64de75fd4138ac
 Created-By: Maven Integration for Eclipse
 
