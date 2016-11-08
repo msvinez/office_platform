@@ -8,14 +8,37 @@ import java.sql.Statement;
 import javax.naming.NamingException;
 
 public class ConnectionForMySQL {
-    public Connection getConnection(){
-    	Connection connection = null;
-    	try{
+
+    Connection connection = null;
+	Statement statement= null;
+	public Statement getConnection(){
+	    try{
 			connection = DriverManager.getConnection("jdbc:mysql://localhost/test?useSSL=false", "root", "1111");
-			Statement st = connection.createStatement();
-    	} catch (SQLException e) {
-    		System.out.print("Відбулась помилка під час спроби підключення до БД");
+			statement = connection.createStatement();
+		} catch (SQLException e) {
+			System.out.print("Відбулась помилка під час спроби підключення до БД");
+			e.printStackTrace();
 		}
-    	return connection;		
+		return statement;		
 	}
+	
+	 public void closeConnection(){
+			try {
+				statement.close();
+				connection.close();
+			} catch (SQLException e) {
+				System.out.print("Відбулась помилка під час закриття з'єднання з БД");
+				e.printStackTrace();
+			}
+	 }
 }
+//public Connection getConnection(){
+//Connection connection = null;
+//try{
+//	connection = DriverManager.getConnection("jdbc:mysql://localhost/test?useSSL=false", "root", "1111");
+//	Statement st = connection.createStatement();
+//} catch (SQLException e) {
+//	System.out.print("Відбулась помилка під час спроби підключення до БД");
+//}
+//return connection;		
+//}
