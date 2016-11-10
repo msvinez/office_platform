@@ -1,3 +1,7 @@
+
+
+
+
 $(function() {
 
     $('#login-form-link').click(function(e) {
@@ -15,4 +19,25 @@ $(function() {
 		e.preventDefault();
 	});
 
+});
+
+
+$("#login-form").submit(function(event) {
+	console.log("tesrt");
+  // alert("1 done");
+ 
+  // // Stop form from submitting normally
+  // event.preventDefault();
+  // alert("2 done");
+ 
+  // // Get some values from elements on the page:
+  // var $form = $( this ),
+  //   username = $form.find( "input[name='username']" ).val(),
+  //   password = $form.find( "input[name='password']" ).val(),
+  //   url = $form.attr( "action" );
+  // alert("3 done");
+ 
+  // // Send the data using post
+  // var posting = $.post( url, { username, password } );
+  // alert("4 done");
 });
