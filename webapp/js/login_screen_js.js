@@ -16,3 +16,21 @@ $(function() {
 	});
 
 });
+
+$("login-form").submit(function(){
+	
+	var url = "hendlerLogin.class"
+
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: {
+			username: $("login-form").find( "input[name='username']" ).val(),
+			password: $("login-form").find( "input[name='password']" ).val() 
+		},
+		success: function(data)
+		{
+			alert(data);
+		}
+	});
+});
