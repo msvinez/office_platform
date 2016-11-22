@@ -21,6 +21,7 @@ $(function() {
 
 });
 
+<<<<<<< HEAD
 
 $("#login-form").submit(function(event) {
 	console.log("tesrt");
@@ -41,3 +42,22 @@ $("#login-form").submit(function(event) {
   // var posting = $.post( url, { username, password } );
   // alert("4 done");
 });
+=======
+$("login-form").submit(function(){
+	
+	var url = "hendlerLogin.class"
+
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: {
+			username: $("login-form").find( "input[name='username']" ).val(),
+			password: $("login-form").find( "input[name='password']" ).val() 
+		},
+		success: function(data)
+		{
+			alert(data);
+		}
+	});
+});
+>>>>>>> origin/master
